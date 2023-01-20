@@ -4,7 +4,7 @@
   "description": "A basic Node.js API",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "@koa/cors": "^4.0.0",
