@@ -25,10 +25,12 @@ app.use((req, res, next) => {
     logger.info(`${req.method} ${req.originalUrl}`, {headers: req.headers, body: req.body});
     next();
 });
+const dbPassword = process.env.DB_PASSWORD
+const dbUser = process.env.DB_USER
 
 mongoose
     .connect(
-        "mongodb+srv://devuser:1234@clustercompanyfinder.zclfgfz.mongodb.net/?retryWrites=true&w=majority",
+        `mongodb+srv://${dbUser}:${dbPassword}@clustercompanyfinder.zclfgfz.mongodb.net/?retryWrites=true&w=majority`,
         {
             useNewUrlParser: true,
             useUnifiedTopology: true,
@@ -41,7 +43,7 @@ app.get("/cities", auth,  Cities.getAll);
 app.get("/cities/:name" , auth , Cities.getOne);
 app.get("/users", auth , Users.getAll);
 app.get("/users/:id", auth , Users.getOne);
-app.get("/users_by_username/:username", auth, Users.getByUsername)
+app.get("/users_by_username/:username", auth,Users.getByUsername)
 app.post('/api/login', Login.login);
 app.post('/register', Users.register);
 
