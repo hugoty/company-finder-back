@@ -37,11 +37,11 @@ mongoose
     .then(() => console.log("Connected to MongoDB"))
     .catch((err) => console.log(err));
 
-app.get("/cities",  Cities.getAll);
-app.get("/cities/:name" , Cities.getOne);
-app.get("/users",  Users.getAll);
-app.get("/users/:id", Users.getOne);
-app.get("/users_by_username/:username", Users.getByUsername)
+app.get("/cities", auth,  Cities.getAll);
+app.get("/cities/:name" , auth , Cities.getOne);
+app.get("/users", auth , Users.getAll);
+app.get("/users/:id", auth , Users.getOne);
+app.get("/users_by_username/:username", auth, Users.getByUsername)
 app.post('/api/login', Login.login);
 app.post('/register', Users.register);
 

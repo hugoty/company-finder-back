@@ -13,3 +13,4 @@
 {"body":{"mail":"fghjk@gfez.com","nom":"jofds","password":"123456","pseudo":"test"},"headers":{"accept":"*/*","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"103","content-type":"application/json","host":"localhost:3000","postman-token":"b18a9026-d0ac-4f77-9035-4b38c544fcb7","user-agent":"PostmanRuntime/7.29.2"},"level":"info","message":"POST /register"}
 {"level":"info","message":"Application started"}
 {"body":{"mail":"fghjk@gfez.com","nom":"jofds","password":"123456","pseudo":"test"},"headers":{"accept":"*/*","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"103","content-type":"application/json","host":"localhost:3000","postman-token":"c3b0f0ff-19f3-4d01-8986-44067f0ff053","user-agent":"PostmanRuntime/7.29.2"},"level":"info","message":"POST /register"}
+{"level":"info","message":"Application started"}

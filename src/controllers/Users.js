@@ -38,7 +38,7 @@ const Users = {
     const citoyen = await User.create(request.body);
   
     try {
-      message = `L'utilisateur  ${request.body.nom + " ayant le pseudo " + request.body.pseudo} a bien été enregistré`
+      message = `L'utilisateur  ${request.body.name + " ayant le pseudo " + request.body.pseudo} a bien été enregistré`
       response.json({ message, data: citoyen })  } catch (error) {
       response.status(500).send(error);
     }
