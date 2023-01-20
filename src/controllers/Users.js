@@ -33,7 +33,17 @@ const Users = {
     } catch (error) {
       res.status(500).send({ error: "Error fetching user from database" });
     }
-  } 
+  },
+  register: async (request, response) => {
+    const citoyen = await User.create(request.body);
+  
+    try {
+      message = `L'utilisateur  ${request.body.nom + " ayant le pseudo " + request.body.pseudo} a bien été enregistré`
+      response.json({ message, data: citoyen })  } catch (error) {
+      response.status(500).send(error);
+    }
+  
+  }
 };
 
 module.exports =  Users;
