@@ -7,9 +7,24 @@ Login= require("./src/controllers/Login.js");
 bodyParser= require("body-parser");
 auth = require("./src/auth/auth.js");
 cors = require("cors");
+const winston = require('winston');
 
 app.use(bodyParser.json());
 app.use(cors());
+
+const logger = winston.createLogger({
+    level: 'info',
+    transports: [
+        new winston.transports.File({ filename: 'error.log', level: 'error' }),
+        new winston.transports.File({ filename: 'combined.log' })
+    ]
+});
+logger.info('Application started');
+
+app.use((req, res, next) => {
+    logger.info(`${req.method} ${req.originalUrl}`, {headers: req.headers, body: req.body});
+    next();
+});
 
 mongoose
     .connect(
